@@ -1,0 +1,42 @@
+name: "Publish Stable Release"
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: publish_stable
+  cancel-in-progress: true
+
+jobs:
+  build_publish:
+    name: "Build & Publish"
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - name: "Clone Repository"
+        uses: actions/checkout@v4
+      - name: "Setup Node.js & Yarn Cache"
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "yarn"
+      - name: "Install Dependencies"
+        run: yarn --immutable
+      - name: "Lint"
+        run: yarn lint
+      - name: "Build UI Package"
+        run: yarn ui:build
+      - name: "Semantic Release"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn semantic-release
+      - name: "Publish package"
+        working-directory: packages/ui
+        run: yarn npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

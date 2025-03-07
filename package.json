@@ -1,0 +1,29 @@
+{
+  "name": "@drazenbebic/coding-dojo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "web:dev": "yarn workspace @drazenbebic/coding-dojo-web dev",
+    "web:build": "yarn workspace @drazenbebic/coding-dojo-web build",
+    "web:lint": "yarn workspace @drazenbebic/coding-dojo-web lint",
+    "web:preview": "yarn workspace @drazenbebic/coding-dojo-web preview",
+    "ui:dev": "yarn workspace @drazenbebic/coding-dojo-ui dev",
+    "ui:build": "yarn workspace @drazenbebic/coding-dojo-ui build",
+    "ui:lint": "yarn workspace @drazenbebic/coding-dojo-ui lint"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/exec": "^7.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.3",
+    "husky": "^9.1.7",
+    "semantic-release": "^24.2.3"
+  },
+  "packageManager": "yarn@4.7.0"
+}

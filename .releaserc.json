@@ -1,0 +1,127 @@
+{
+  "branches": [
+    "main"
+  ],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "releaseRules": [
+          {
+            "type": "feat",
+            "release": "minor"
+          },
+          {
+            "type": "fix",
+            "release": "patch"
+          },
+          {
+            "type": "perf",
+            "release": "patch"
+          },
+          {
+            "type": "refactor",
+            "release": "patch"
+          },
+          {
+            "type": "test",
+            "release": "patch"
+          },
+          {
+            "type": "docs",
+            "release": "patch"
+          },
+          {
+            "type": "ci",
+            "release": "patch"
+          },
+          {
+            "type": "BREAKING",
+            "release": "major"
+          }
+        ],
+        "parserOpts": {
+          "mergePattern": "^Merge pull request #(\\d+) from (.*)$",
+          "mergeCorrespondence": ["id", "source"]
+        }
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "writerOpts": [
+          {
+            "type": "feat",
+            "section": "Features",
+            "hidden": false
+          },
+          {
+            "type": "fix",
+            "section": "Bug Fixes",
+            "hidden": false
+          },
+          {
+            "type": "perf",
+            "section": "Performance",
+            "hidden": false
+          },
+          {
+            "type": "refactor",
+            "section": "Refactoring",
+            "hidden": false
+          },
+          {
+            "type": "test",
+            "section": "Tests",
+            "hidden": false
+          },
+          {
+            "type": "docs",
+            "section": "Documentation",
+            "hidden": false
+          },
+          {
+            "type": "ci",
+            "section": "CI",
+            "hidden": false
+          },
+          {
+            "type": "chore",
+            "hidden": true
+          }
+        ],
+        "parserOpts": {
+          "mergePattern": "^Merge pull request #(\\d+) from (.*)$",
+          "mergeCorrespondence": ["id", "source"]
+        }
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md",
+        "changelogTitle": "# CHANGELOG: Design System"
+      }
+    ],
+    "@semantic-release/github",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "./bump.sh ${nextRelease.version}"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md",
+          "package.json",
+          "apps/*/package.json",
+          "packages/*/package.json",
+          "yarn.lock"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}
