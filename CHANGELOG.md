@@ -1,5 +1,12 @@
 # CHANGELOG: Design System
 
+## [1.0.1](https://github.com/drazenbebic/coding-dojo/compare/v1.0.0...v1.0.1) (2025-03-07)
+
+
+### Bug Fixes
+
+* add issues:write permission to github workflow ([942fcc7](https://github.com/drazenbebic/coding-dojo/commit/942fcc796c291d990345cbce2809392d1268aa4e))
+
 # 1.0.0 (2025-03-07)
 
 
