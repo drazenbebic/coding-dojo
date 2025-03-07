@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo ".yarnrc.yml check is running"
+
+set -e
+
+# Check if .yarnrc.yml has any modifications compared to HEAD
+if ! git diff --quiet HEAD -- .yarnrc.yml; then
+  echo "Error: .yarnrc.yml has been modified. Please revert your changes." >&2
+  exit 1
+fi
+
+echo ".yarnrc.yml is unchanged."
