@@ -6,6 +6,9 @@ const config: webpack.Configuration = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
+    library: {
+      type: 'module',
+    }
   },
   module: {
     rules: [
@@ -36,6 +39,9 @@ const config: webpack.Configuration = {
         type: 'asset/resource',
       },
     ],
+  },
+  experiments: {
+    outputModule: true
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
