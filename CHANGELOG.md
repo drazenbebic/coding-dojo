@@ -1,5 +1,12 @@
 # CHANGELOG: Design System
 
+# [1.1.0](https://github.com/drazenbebic/coding-dojo/compare/v1.0.2...v1.1.0) (2025-03-07)
+
+
+### Features
+
+* add amazing component ([8325a8b](https://github.com/drazenbebic/coding-dojo/commit/8325a8b1bbc853adcacdfa83e7a53798b3b9effd))
+
 ## [1.0.2](https://github.com/drazenbebic/coding-dojo/compare/v1.0.1...v1.0.2) (2025-03-07)
 
 
