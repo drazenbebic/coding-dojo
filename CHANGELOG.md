@@ -1,5 +1,12 @@
 # CHANGELOG: Design System
 
+## [1.0.2](https://github.com/drazenbebic/coding-dojo/compare/v1.0.1...v1.0.2) (2025-03-07)
+
+
+### Bug Fixes
+
+* change package/ui to module and esnext ([d8f38d6](https://github.com/drazenbebic/coding-dojo/commit/d8f38d6c0fe4b5b25bf54d9810f6f4da0645ee85))
+
 ## [1.0.1](https://github.com/drazenbebic/coding-dojo/compare/v1.0.0...v1.0.1) (2025-03-07)
 
 
