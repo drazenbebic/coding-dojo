@@ -1,5 +1,13 @@
 # CHANGELOG: Design System
 
+## [1.1.1](https://github.com/drazenbebic/coding-dojo/compare/v1.1.0...v1.1.1) (2025-03-07)
+
+
+### Bug Fixes
+
+* add pre-commit hook ([4c063af](https://github.com/drazenbebic/coding-dojo/commit/4c063af87a745a2c420c19865bb56e05434096b0))
+* update readme ([47f13d9](https://github.com/drazenbebic/coding-dojo/commit/47f13d9bb3da13b1b7b340e166c5f5a7f26420a6))
+
 # [1.1.0](https://github.com/drazenbebic/coding-dojo/compare/v1.0.2...v1.1.0) (2025-03-07)
 
 
